@@ -32,8 +32,33 @@ do {
     n++; 
 } while (n < 4);
 
+// eventos
+// click
+const cielo2 = document.getElementById('cielo2');
+
 const btnEstrella = document.getElementById('btnEstrella');
 
 btnEstrella.addEventListener('click', () => {
     cielo.innerHTML += '⭐'; 
 }); 
+
+// doble click
+const btnPlaneta = document.getElementById('btnPlaneta');
+
+btnPlaneta.addEventListener('dblclick', () => {
+    cielo.innerHTML += '🪐';
+});
+
+const inputEmoji = document.getElementById('inputEmoji');
+
+const btnAgregarEmoji = document.getElementById('btnAgregarEmoji');
+
+btnAgregarEmoji.addEventListener("click", () => {
+    var emoji = inputEmoji.value.trim();
+    if(emoji) cielo.innerHTML += emoji;
+    inputEmoji.value=""; 
+});
+
+inputEmoji.addEventListener("keydown", e => {
+    if(e.key === "Escape") cielo.innerHTML = "";
+})
